@@ -736,9 +736,8 @@ div.navBar {
 	color: #373737;
 	font-size: 26px;
 	font-weight: bold;
-	line-height: 1.5em;
 	padding-bottom: .3em;
-	padding-top: 15px;
+	padding-top: .3em;
 }
 .entry-title,
 .entry-title a {
