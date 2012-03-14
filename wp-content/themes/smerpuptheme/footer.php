@@ -27,7 +27,8 @@
 					<li><a href="/about-dezhi-liu" target="_blank">About</a><span class="dot divider"> ·</span></li>
 					<li><a href="http://www.facebook.com/smerpup" target="_blank">Facebook</a><span class="dot divider"> ·</span></li>
 					<li><a href="http://twitter.com/smerpup" target="_blank">Twitter</a><span class="dot divider"> ·</span></li>
-					<li><a href="http://feeds.smerpup.com/smerpup" target="_blank">Feedburner</a><span class="dot divider"> ·</span></li>
+					<li><a href="http://blog.smerpup.com/feed/" target="_blank">Feed</a><span class="dot divider"> ·</span></li>
+					<li><a href="http://feeds.feedburner.com/smerpup" target="_blank">Subscribe</a><span class="dot divider"> ·</span></li>
 					<li><a href="http://weibo.com/smerpup" target="_blank">新浪微博</a><span class="dot divider"> ·</span></li>
 					<li><a href="/sitemap.html">Sitemap</a><span class="dot divider"> ·</span></li>
 					<li><a href="/wp-admin">Admin</a><span class="dot divider"> ·</span></li>
