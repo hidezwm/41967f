@@ -2410,7 +2410,6 @@ p.comment-form-comment {
 	/* Floated content doesn't work well at this size */
 	.alignleft,
 	.alignright {
-		float: none;
 		margin-left: 0;
 		margin-right: 0;
 	}
