@@ -71,37 +71,46 @@
 	wp_head();
 ?>
 <style>
+#logo {
+margin: 50px;
+font-size: 80px;
+font-style: italic;
+}
 ul {
 list-style: none;
-margin: 30px;
-padding: 20px;
+margin: 50px;
+padding-bottom: 50px;
 }
 ul li a {
 	text-decoration: none;
     display: block;
-    background-repeat: no-repeat;
-    background-position: 15px 20px;
-    padding: 15px 20px 15px 60px;
-    background-color: rgb(200, 0, 103, 0.06);
-    margin: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(200, 0, 103, 0.16);
     -moz-border-radius: 4px;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 40px;
+    padding:10px;
 }
 ul li a:hover {
     display: block;
-    background-color: rgb(200, 0, 103, 0.6);
+    color: #FFFFFF;
+    background-color: rgba(200, 0, 103, 0.6);
     border-color:#DDDDDD;
     box-shadow: 0 0 10px rgba(65, 131, 196, 0.3);
 }
 #page {
-	background: url(http://www.wallpaperpimper.com/wallpaper/Art_&_3D/Misc/Smiley-Face-2-F3T02VYMGA-1600x1200.jpg);
+	background: #fff;
+}
+@media (max-width: 800px) {
+	#logo { font-size: 50px;} 
+	ul li a { font-size: 30px; }
 }
 </style>
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed">
-<div id="logo">bangforce.com</div>
+<a href="http://bangforce.com/" id="logo">bangforce.com</a>
 <ul>
 <li><a href="http://bangforce.com/">Home</a></li>
 <li><a href="http://bangforce.com/blog/">Blog</a></li>
@@ -110,4 +119,4 @@ ul li a:hover {
 </ul>
 </div>
 </body>
-<?php get_footer(); ?>
+</html>
