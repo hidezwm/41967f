@@ -39,22 +39,18 @@
 		<?php else : ?>
 		<div class="entry-content">
 			<?php // if the post has image
-					  $first_img = '';
-					  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-					  $first_img = $matches [1] [0]; //it is the first image url
-					  // if it is a image hosted on imgur
-					  if (strpos($first_img,'imgur')) {
-					  	//replace the l with s and get the url of the small thumbnail
-					  	$first_img_thumbnail = str_replace("l.jpg", "s.jpg", $first_img);
-					  	//echo $first_img_thumbnail . $first_img;
-						?>
-						
-						<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '%s', 'twentyeleven' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><img class="alignright" src="<?php echo $first_img_thumbnail ?>" alt="Thumbnail"></a>
-
-						<?php
-						
-					  }
-					  
+				$first_img = '';
+				$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+				$first_img = $matches [1] [0]; //it is the first image url
+				// if it is a image hosted on imgur
+				if (strpos($first_img,'imgur')) {
+					//replace the l with s and get the url of the small thumbnail
+					$first_img_thumbnail = str_replace("l.jpg", "s.jpg", $first_img);
+					//echo $first_img_thumbnail . $first_img;
+					?>
+					<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '%s', 'twentyeleven' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><img class="alignright" src="<?php echo $first_img_thumbnail ?>" alt="Thumbnail"></a>
+					<?php	
+				}
 			?>
 			<?php the_excerpt(); ?>
 								
