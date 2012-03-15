@@ -2408,10 +2408,14 @@ p.comment-form-comment {
 		top: 1.625em !important;
 	}
 	/* Floated content doesn't work well at this size */
-	.alignleft,
+	.alignleft {
+		margin-right: 5px;
+		margin-bottom: 5px;
+	}
+	
 	.alignright {
-		margin-left: 0;
-		margin-right: 0;
+		margin-left: 5px;
+		margin-bottom: 5px;
 	}
 	/* Make sure the post-post navigation doesn't collide with anything */
 	#nav-single {
