@@ -505,6 +505,9 @@ a:hover {
 	padding-bottom: 10px;
 	position: relative;
 	z-index: 9999;
+	background: url(/wp-content/themes/twentyeleven/images/background_header.png) no-repeat right;
+	background-size: auto 70%;
+
 }
 #site-title {
 	margin-right: 270px;
@@ -2716,4 +2719,4 @@ a:hover,a:focus,a:active {text-decoration: none; color:#4794BC;}
 }
 .contread {
 	font-style: italic;
-}
+ }
