@@ -2679,10 +2679,9 @@ p.comment-form-comment {
 }
 /* Reset custom
 ----------------------------------------------- */
-#page { border-radius: 4px; }
 @media (max-width: 800px) {
 	body { padding: 0; margin: 0;}
-	#page {border-radius: 0; margin: 0; }
+	#page {border-radius: 4px; margin: 4px; }
 	#site-description { margin:0 0 5px 0;}
 }
 #branding { border: none; }
