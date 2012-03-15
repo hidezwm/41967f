@@ -932,8 +932,8 @@ img#wpstats {
 img[class*="align"],
 img[class*="wp-image-"],
 #content .gallery .gallery-icon img {/* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
-	border: 1px solid #ddd;
-	padding: 6px;
+	background: #8dc8ff;
+	padding: 4px;
 }
 .wp-caption img {
 	border-color: #eee;
@@ -947,7 +947,7 @@ a:active img[class*="wp-image-"],
 #content .gallery .gallery-icon a:focus img,
 #content .gallery .gallery-icon a:hover img,
 #content .gallery .gallery-icon a:active img {/* Add some useful style to those fancy borders for linked images ... */
-	background: #eee;
+	background: #0067C8;
 	border-color: #bbb;
 }
 .wp-caption a:focus img,
@@ -2713,4 +2713,7 @@ a:hover,a:focus,a:active {text-decoration: none; color:#4794BC;}
 	background-image: -moz-linear-gradient(#74B2DB,#1E5FA2);
 	background-image: -webkit-linear-gradient(#74B2DB,#1E5FA2);
 	text-decoration: none;
+}
+.contread {
+	font-style: italic;
 }
