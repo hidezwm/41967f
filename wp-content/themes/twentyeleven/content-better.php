@@ -45,7 +45,7 @@
 				// if it is a image hosted on imgur
 				if (strpos($first_img,'imgur')) {
 					//replace the l with s and get the url of the small thumbnail
-					$first_img_thumbnail = str_replace("l.jpg", "s.jpg", $first_img);
+					$first_img_thumbnail = str_replace("l.", "s.", $first_img);
 					//echo $first_img_thumbnail . $first_img;
 					?>
 					<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '%s', 'twentyeleven' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><img class="alignright" src="<?php echo $first_img_thumbnail ?>" alt="Thumbnail"></a>
