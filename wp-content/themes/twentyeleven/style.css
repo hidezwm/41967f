@@ -714,10 +714,6 @@ a:hover {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 }
-.entry-title,
-.entry-header .entry-meta {
-	padding-right: 76px;
-}
 .entry-title {
 	clear: both;
 	color: #222;
