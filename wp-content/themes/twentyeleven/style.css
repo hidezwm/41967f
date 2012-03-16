@@ -2716,3 +2716,16 @@ a:hover,a:focus,a:active {text-decoration: none; color:#4794BC;}
 .contread {
 	font-style: italic;
 }
+div.trans {
+padding: 0 10px;
+opacity:0.8;
+background-color: #fff;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-transition: all 0.5s linear;
+transition: all 0.5s linear;
+}
+div.trans:hover {
+opacity:1;
+background-color: rgba(0, 103, 200, 0.06);
+}
