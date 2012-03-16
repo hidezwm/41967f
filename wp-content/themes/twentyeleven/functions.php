@@ -334,7 +334,7 @@ function twentyeleven_continue_reading_link() {
  * function tied to the excerpt_more filter hook.
  */
 function twentyeleven_auto_excerpt_more( $more ) {
-	return ' &hellip;' . twentyeleven_continue_reading_link();
+	// return ' &hellip;' . twentyeleven_continue_reading_link();
 }
 add_filter( 'excerpt_more', 'twentyeleven_auto_excerpt_more' );
 
@@ -348,7 +348,7 @@ function twentyeleven_custom_excerpt_more( $output ) {
 	if ( has_excerpt() && ! is_attachment() ) {
 		$output .= twentyeleven_continue_reading_link();
 	}
-	return $output;
+	return $output . twentyeleven_continue_reading_link();
 }
 add_filter( 'get_the_excerpt', 'twentyeleven_custom_excerpt_more' );
 

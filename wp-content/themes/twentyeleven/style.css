@@ -315,7 +315,7 @@ body {
 
 body, input, textarea {
 	color: #373737;
-	font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 14px 微软雅黑, "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	line-height: 1.625;
 }
