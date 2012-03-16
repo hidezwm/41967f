@@ -7,7 +7,7 @@
  * @since Twenty Eleven 1.0
  */
 ?>
-
+<div class="trans">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
 			<?php if ( is_sticky() ) : ?>
@@ -95,3 +95,4 @@
 			<?php edit_post_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?>
 		</footer><!-- #entry-meta -->
 	</article><!-- #post-<?php the_ID(); ?> -->
+</div>
