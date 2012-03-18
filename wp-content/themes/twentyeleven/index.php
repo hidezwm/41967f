@@ -22,7 +22,7 @@ get_header(); ?>
 				<?php twentyeleven_content_nav( 'nav-above' ); ?>
 				
 				<?php /* Sort function */ ?>
-				<?php sort_query_posts_by('score', 'asc'); ?>
+				<?php sort_query_posts_by('score', 'desc'); ?>
 				
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
