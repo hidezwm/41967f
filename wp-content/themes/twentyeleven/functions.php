@@ -592,3 +592,36 @@ function twentyeleven_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'twentyeleven_body_classes' );
 
+/**
+ * 
+ * content control for logged in
+ *
+ * @since Twenty Eleven 1.0
+ */
+add_shortcode( 'member', 'member_check_shortcode' );
+
+function member_check_shortcode( $atts, $content = null ) {
+	if (is_page( 154 )) return '[member]' . $content . '[/member]';
+	 if ( is_user_logged_in() && !is_null( $content ) && !is_feed() ) 
+	 	return '<div id="acl">感谢您加入邦孚网</div><div id="aclcontent">' . $content .'</div>';
+	 return '<div id="acl">很抱歉，该内容只对邦友网注册用户开放。</div>';
+}
+
+/**
+ * 
+ * content control for bangyou
+ *
+ * @since Twenty Eleven 1.0
+ */
+add_shortcode( 'bangyou', 'bangyou_check_shortcode' );
+
+function bangyou_check_shortcode( $atts, $content = null ) {
+	
+	if (is_page( 154 )) 
+	return '[bangyou]' . $content . '[/bangyou]';
+	 if ( is_user_logged_in() && !is_null( $content ) && !is_feed() ) 
+	 	if (current_user_can('author') || current_user_can('administrator'))
+			return '<div id="acl">邦友，像你致敬！</div><div id="aclcontent">' . $content .'</div>';
+	 		else return '<div id="acl">感谢您加入邦孚网。很抱歉，该内容只对<abbr title="这是一帮曾今混在一起，现在天南海北的年轻人。">邦友</abbr>开放。如有疑问，请点击<a href="/">这里</a>。</div>';
+	return '<div id="acl">该内容只对<abbr title="这是一帮曾今混在一起，现在天南海北的年轻人。">邦友</abbr>开放。请先<a class="simplemodal-login" href="/wp-login.php??redirect_to=<?php get_permalink(); ?>">登陆</a>。</div>';
+}
