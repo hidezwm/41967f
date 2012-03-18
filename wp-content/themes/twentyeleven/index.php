@@ -20,7 +20,10 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<?php twentyeleven_content_nav( 'nav-above' ); ?>
-
+				
+				<?php /* Sort function */ ?>
+				<?php sort_query_posts_by('score', 'asc'); ?>
+				
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
