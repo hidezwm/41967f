@@ -219,22 +219,6 @@ if (!class_exists("UpDownPostCommentVotes"))
 			return ( count($result_query) == 1 ? array( "up" => $result_query[0]->vote_count_up, "down" => $result_query[0]->vote_count_down ) : array( "up" => 0, "down" => 0 ));
 		}
 
-		//get top rated 20 posts
-		public function top_rated_get($total=20, $cat=false)
-		{
-			global $wpdb;
-			$table = $wpdb->prefix . 'postmeta';
-			if(!$cat)
-			    $rated_posts = $wpdb->get_results("SELECT a.ID, a.post_title, b.meta_value AS 'ratings' FROM " . $wpdb->posts . " a, $table b WHERE a.post_status='publish' AND a.ID=b.post_id AND b.meta_key='_kk_ratings_avg' ORDER BY b.meta_value DESC LIMIT $total");
-			else
-			{
-			    $table2 = $wpdb->prefix . 'term_taxonomy';
-			    $table3 = $wpdb->prefix . 'term_relationships';
-			    $rated_posts = $wpdb->get_results("SELECT a.ID, a.post_title, b.meta_value AS 'ratings' FROM " . $wpdb->posts . " a, $table b, $table2 c, $table3 d WHERE c.term_taxonomy_id=d.term_taxonomy_id AND c.term_id=$cat AND d.object_id=a.ID AND a.post_status='publish' AND a.ID=b.post_id AND b.meta_key='_kk_ratings_avg' ORDER BY b.meta_value DESC LIMIT $total");
-			}
-			
-			return $rated_posts;
-		}
 		public function get_comment_votes_total( $comment_id ) {
 			global $wpdb;
 
