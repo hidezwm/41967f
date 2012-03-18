@@ -44,8 +44,18 @@ div.updown-active {
 
 img.updown-button {
   cursor: pointer;
+  opacity: 0.6;
 }
-
+img.updown-button:hover {
+  opacity: 1.0;
+}
+a.simplemodal-login img {
+  cursor: pointer;
+  opacity: 0.6;
+}
+a.simplemodal-login img:hover {
+  opacity: 1.0;
+}
 div.updown-vote-box div.updown-label {}
 
 div.updown-vote-box div.updown-label {
