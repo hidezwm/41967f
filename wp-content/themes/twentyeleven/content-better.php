@@ -56,6 +56,8 @@
 					<?php	
 				}
 			?>
+			<?php if(function_exists('up_down_post_votes')) { up_down_post_votes( get_the_ID() ); } ?> 
+			
 			<?php the_excerpt(); ?>
 								
 			<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'twentyeleven' ) . '</span>', 'after' => '</div>' ) ); ?>
@@ -63,7 +65,6 @@
 		<?php endif; ?>
 
 		<footer class="entry-meta">
-			<?php if(function_exists('kk_star_ratings')) : echo kk_star_ratings($pid); endif; //star rating?> 
 			<?php $show_sep = false; ?>
 			<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
