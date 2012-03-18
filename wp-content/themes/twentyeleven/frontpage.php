@@ -112,7 +112,13 @@ html {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover
+	background-size: cover;
+}
+@media (max-width: 650px) {
+	html {
+		background: url();
+		background: #0067C8;
+	}
 }
 #page {
 	background: none;
@@ -151,5 +157,5 @@ background: none;
 				?>
 
 				<?php endwhile; ?>
-</div><a class="sitemap" href="/sitemap.html">Sitemap</a></body></html>
+</div><a class="sitemap" href="/sitemap.xml">Sitemap</a></body></html>
 
