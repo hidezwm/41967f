@@ -219,6 +219,22 @@ if (!class_exists("UpDownPostCommentVotes"))
 			return ( count($result_query) == 1 ? array( "up" => $result_query[0]->vote_count_up, "down" => $result_query[0]->vote_count_down ) : array( "up" => 0, "down" => 0 ));
 		}
 
+		//get top rated 20 posts
+		public function top_rated_get($total=20, $cat=false)
+		{
+			global $wpdb;
+			$table = $wpdb->prefix . 'postmeta';
+			if(!$cat)
+			    $rated_posts = $wpdb->get_results("SELECT a.ID, a.post_title, b.meta_value AS 'ratings' FROM " . $wpdb->posts . " a, $table b WHERE a.post_status='publish' AND a.ID=b.post_id AND b.meta_key='_kk_ratings_avg' ORDER BY b.meta_value DESC LIMIT $total");
+			else
+			{
+			    $table2 = $wpdb->prefix . 'term_taxonomy';
+			    $table3 = $wpdb->prefix . 'term_relationships';
+			    $rated_posts = $wpdb->get_results("SELECT a.ID, a.post_title, b.meta_value AS 'ratings' FROM " . $wpdb->posts . " a, $table b, $table2 c, $table3 d WHERE c.term_taxonomy_id=d.term_taxonomy_id AND c.term_id=$cat AND d.object_id=a.ID AND a.post_status='publish' AND a.ID=b.post_id AND b.meta_key='_kk_ratings_avg' ORDER BY b.meta_value DESC LIMIT $total");
+			}
+			
+			return $rated_posts;
+		}
 		public function get_comment_votes_total( $comment_id ) {
 			global $wpdb;
 
@@ -317,11 +333,13 @@ if (!class_exists("UpDownPostCommentVotes"))
 				$vote_label .= get_option ('updown_votes_text');
 				
 			if ($votable)
-				echo '<div><img class="updown-button updown-up-button" vote-direction="1" src="'.$up_img_src.'"></div>';
-
+				echo '<div><img title="Bang! IT" class="updown-button updown-up-button" vote-direction="1" src="'.$up_img_src.'"></div>';
+			else echo '<div><a class="simplemodal-login" href="/wp-login.php?redirect_to=' . get_permalink() . '" ><img src="'.$up_img_src.'"></a></div>';
+				
+				
 			if (get_option ("updown_counter_type") == "total")
 			{
-				echo '<div class="updown-total-count'.$updown_classnames.'" title="'.$vote_total_count_num.' vote'.($vote_total_count_num != 1 ? 's' : '').' so far">'.$vote_total_count.'</div>';
+				echo '<div class="updown-total-count'.$updown_classnames.'" title="'.$vote_total_count_num.' vote'.($vote_total_count_num != 1 ? 's' : '').' in total">'.$vote_total_count.'</div>';
 			}
 			else
 			{
@@ -330,8 +348,8 @@ if (!class_exists("UpDownPostCommentVotes"))
 			}
 
 			if ($votable)
-				echo '<div><img class="updown-button updown-down-button" vote-direction="-1" src="'.$down_img_src.'"></div>';
-
+				echo '<div><img title="Boring!" class="updown-button updown-down-button" vote-direction="-1" src="'.$down_img_src.'"></div>';
+			else echo '<div><a class="simplemodal-login" href="/wp-login.php?redirect_to=' . get_permalink() . '" ><img src="'.$down_img_src.'"></a></div>';
 			echo '<div class="updown-label">'.$vote_label.'</div>';
 			
 		}
