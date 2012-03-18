@@ -1,8 +1,7 @@
 <?php
 /**
- * The Header for our theme.
- *
- * Displays all of the <head> section and everything up till <div id="main">
+ * Template Name: Frontpage Template
+ * Description: A Page Template that showcases Sticky Posts, Asides, and Blog Posts
  *
  * @package WordPress
  * @subpackage Twenty_Eleven
@@ -46,7 +45,6 @@
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -66,58 +64,92 @@
 	wp_head();
 ?>
 <style>
-a.mb {
+a {
 	text-decoration: none;
 	display: block;
-	margin-bottom: 10px;
-	background-color: rgba(200, 0, 103, 0.16);
-	-moz-border-radius: 10px;
 	border-radius: 10px;
 	cursor: pointer;
 	padding:20px;
 	max-width: 400px;
 	float: right;
 	margin: 40px;
+	-moz-border-radius: 10px;
+}
+a.mb {
+
+	background-color: rgba(255, 255, 255, 0.6);
+	
+
 }
 a.mb:hover {
-    display: block;
     color: #FFFFFF;
-    background-color: rgba(200, 0, 103, 0.6);
-    border-color:#DDDDDD;
-    box-shadow: 0 0 10px rgba(65, 131, 196, 0.3);
+    background-color: rgba(25, 25, 25, 0.6);
+        /* Firefox */
+    -moz-transition: all 1s ease-in;
+    /* WebKit */
+    -webkit-transition: all 1s ease-in;
+    /* Opera */
+    -o-transition: all 1s ease-in;
+    /* Standard */
+    transition: all 1s ease-in;
 }
 h1 {
-	font-size: 40px;
+	font-size: 60px;
 }
-body {
-	background: url(http://i.imgur.com/xCuj6.jpg) no-repeat center top;
+article {
+	display: block;
+	background-color: rgba(255, 255, 255, 0.6);
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding:20px;
+	max-width: 500px;
+	float: right;
+	margin: 40px;
+	color: #333;
+}
+html {
+	background: url(http://i.imgur.com/xCuj6.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover
 }
 #page {
-	height: 750px;
 	background: none;
+	margin: 0 auto;
+	max-width: 1000px;
+}
+abbr, acronym, dfn {
+border-bottom: 1px dotted #666;
+cursor: help;
+}
+body.custom-background {
+background: none;
 }
 .sitemap {
-	margin-right: 20px;
-	color:#777;
+	font-size: 1px;
+	text-decoration: none;
 }
 </style>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed">
-	<header id="branding" role="banner">
-			<nav id="access" role="navigation">
-				<h3 class="assistive-text"><?php _e( 'Main menu', 'twentyeleven' ); ?></h3>
-				<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
-				<div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'twentyeleven' ); ?>"><?php _e( 'Skip to primary content', 'twentyeleven' ); ?></a></div>
-				<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'twentyeleven' ); ?>"><?php _e( 'Skip to secondary content', 'twentyeleven' ); ?></a></div>
-				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- #access -->
-	</header><!-- #branding -->
 	<a class="mb" href="<?php echo esc_url( home_url( '/blog' ) ); ?>" rel="home">
 		<h1 id="site-title"><span><?php bloginfo( 'name' ); ?></span></h1>
 		<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 	</a>
+	<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php
+					/**
+					 * We are using a heading by rendering the_content
+					 * If we have content for this page, let's display it.
+					 */
+					if ( '' != get_the_content() )
+						get_template_part( 'content', 'intro' );
+				?>
+
+				<?php endwhile; ?>
 </div><a class="sitemap" href="/sitemap.html">Sitemap</a></body></html>
 
