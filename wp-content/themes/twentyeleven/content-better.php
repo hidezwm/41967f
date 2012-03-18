@@ -50,6 +50,10 @@
 					?>
 					<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '%s', 'twentyeleven' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><img class="alignright" src="<?php echo $first_img_thumbnail ?>" width="90" alt="Thumbnail"></a>
 					<?php	
+				} elseif ($first_img) {
+					?>
+					<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '%s', 'twentyeleven' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><img class="alignright" src="<?php echo $first_img ?>" width="90" alt="Thumbnail"></a>
+					<?php	
 				}
 			?>
 			<?php the_excerpt(); ?>
