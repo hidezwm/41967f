@@ -2745,3 +2745,10 @@ a:hover,a:focus,a:active {text-decoration: none; color:#4794BC;}
 	margin: 0 auto 10px;
 	width: 100%;
 }
+a.simplemodal-register {
+	color: #066DAD !important;
+	font-weight: bold;
+}
+a.simplemodal-register:hover {
+	color: red !important;
+}
