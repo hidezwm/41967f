@@ -63,6 +63,7 @@
 		<?php endif; ?>
 
 		<footer class="entry-meta">
+			<?php if(function_exists('kk_star_ratings')) : echo kk_star_ratings($pid); endif; //star rating?> 
 			<?php $show_sep = false; ?>
 			<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
