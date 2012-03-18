@@ -436,6 +436,12 @@ if (!class_exists("UpDownPostCommentVotes"))
 					( vote_count_up, vote_count_down, ".$element_name."_id )
 					VALUES
 					( %d, %d, %d )", $up_vote_delta, $down_vote_delta, $element_id));
+			//Update post table
+			$wpdb->query($wpdb->prepare("
+					UPDATE ".$wpdb->base_prefix."posts
+					SET up = (up + %d),
+						down = (down + %d)
+					WHERE id = %d", $up_vote_delta, $down_vote_delta, $element_id));
 
 			//Return success
 			$result["status"] = 1;
