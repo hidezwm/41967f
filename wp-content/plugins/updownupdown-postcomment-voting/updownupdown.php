@@ -331,9 +331,14 @@ if (!class_exists("UpDownPostCommentVotes"))
 				$vote_label = get_option ('updown_vote_text');
 			else
 				$vote_label .= get_option ('updown_votes_text');
-				
+			
+			// if voted, set title
+			if ( $existing_vote > 0) 
+				$uptitle = "You Bang!ed this! Click to un-Bang!.";
+			else $uptitle = "Bang it!";
+
 			if ($votable)
-				echo '<div><img title="Bang! IT" class="updown-button updown-up-button" vote-direction="1" src="'.$up_img_src.'"></div>';
+				echo '<div><img title="'. $uptitle.'" class="updown-button updown-up-button" vote-direction="1" src="'.$up_img_src.'"></div>';
 			else echo '<div><a class="simplemodal-login" href="/wp-login.php?redirect_to=' . get_permalink() . '" ><img src="'.$up_img_src.'"></a></div>';
 				
 				
@@ -346,9 +351,13 @@ if (!class_exists("UpDownPostCommentVotes"))
 				echo '<div class="updown-up-count'.$up_classnames.'">'.$vote_up_count.'</div>';
 				echo '<div class="updown-down-count'.$down_classnames.'">'.$vote_down_count.'</div>';
 			}
-
+			// if voted, set title
+			if ( $existing_vote < 0) 
+				$downtitle = "You Disliked this! Click to un-Dislike.";
+			else $downtitle = "Dislike it!";
+			
 			if ($votable)
-				echo '<div><img title="Boring!" class="updown-button updown-down-button" vote-direction="-1" src="'.$down_img_src.'"></div>';
+				echo '<div><img title="'. $downtitle.'" class="updown-button updown-down-button" vote-direction="-1" src="'.$down_img_src.'"></div>';
 			else echo '<div><a class="simplemodal-login" href="/wp-login.php?redirect_to=' . get_permalink() . '" ><img src="'.$down_img_src.'"></a></div>';
 			echo '<div class="updown-label">'.$vote_label.'</div>';
 			
