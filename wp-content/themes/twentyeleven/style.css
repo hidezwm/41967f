@@ -2730,7 +2730,7 @@ a:hover,a:focus,a:active {text-decoration: none; color:#4794BC;}
 	-moz-border-radius-topleft: 4px;
 	border-top-right-radius: 4px;	
 	-moz-border-radius-topright: 4px;
-	padding:20px;
+	padding:10px;
 	margin: 10px auto 0;
 	width: 100%;
 }
@@ -2741,7 +2741,7 @@ a:hover,a:focus,a:active {text-decoration: none; color:#4794BC;}
 	-moz-border-radius-bottomright: 4px;
 	border-bottom-left-radius: 4px;	
 	-moz-border-radius-bottomleft: 4px;
-	padding:20px;
+	padding:10px;
 	margin: 0 auto 10px;
 	width: 100%;
 }
