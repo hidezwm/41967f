@@ -84,7 +84,7 @@ a.mb {
 a.mb:hover {
     color: #FFFFFF;
     background-color: rgba(25, 25, 25, 0.6);
-        /* Firefox */
+    /* Firefox */
     -moz-transition: all 1s ease-in;
     /* WebKit */
     -webkit-transition: all 1s ease-in;
@@ -119,6 +119,17 @@ html {
 		background: url();
 		background: #0067C8;
 	}
+	#page {
+		margin: 0;
+	}
+	article {
+		padding:10px;
+		margin: 10px;
+	}
+	a {
+		padding:10px;
+		margin: 10px;
+	}
 }
 #page {
 	background: none;
@@ -135,6 +146,19 @@ background: none;
 .sitemap {
 	font-size: 1px;
 	text-decoration: none;
+}
+blockquote {
+	font-family: Georgia, "Bitstream Charter", serif;
+	font-style: italic;
+	font-weight: normal;
+	margin: 0 3em;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
 }
 </style>
 </head>
