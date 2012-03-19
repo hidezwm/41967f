@@ -68,3 +68,8 @@ Plugin developed by Túbal Martín at [www.margenn.com](http://www.margenn.com).
 
 = 1.1 =
 * Code refactored for improved performance. Updating is recommended.
+
+== Dezhi ==
+
+ALTER TABLE  `wp_posts` ADD  `up` INT NOT NULL ,
+ADD  `down` INT NOT NULL
