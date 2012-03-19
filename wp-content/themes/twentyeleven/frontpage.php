@@ -165,9 +165,10 @@ blockquote, q {
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed">
-	<a class="mb" href="<?php echo esc_url( home_url( '/blog' ) ); ?>" rel="home">
+	<a class="mb" href="<?php echo esc_url( home_url( '/hot' ) ); ?>" rel="home">
 		<h1 id="site-title"><span><?php bloginfo( 'name' ); ?></span></h1>
 		<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+		Enter >> 
 	</a>
 	<?php while ( have_posts() ) : the_post(); ?>
 
