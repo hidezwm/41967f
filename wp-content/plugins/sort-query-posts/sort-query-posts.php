@@ -52,9 +52,10 @@ if (! function_exists('sort_query_posts_by'))
             'modified'      => 'return sqp_compare_by_number(strtotime($o1->post_modified), strtotime($o2->post_modified), '.$order.');',
             'parent'        => 'return sqp_compare_by_number($o1->post_parent, $o2->post_parent, '.$order.');',
             'title'         => 'return sqp_compare_by_string($o1->post_title, $o2->post_title, '.$order.');',
-            'score'			=> 'return sqp_compare_by_number(($o1->up - $o1->down), ($o2->up - $o2->down), '.$order.');'
+            'score'			=> 'return sqp_compare_by_number(10000000*($o1->up - $o1->down + 1)/ pow((strtotime("now") - strtotime($o1->post_date))/3600 + 2 , 1.7), 100000*($o2->up - $o2->down + 1)/ pow((strtotime("now") - strtotime($o2->post_date))/3600 + 2 , 1.7), '.$order.');'
         );
-
+  // ($o1->up - $o1->down)/ pow((strtotime("now") - strtotime($o1->post_date))/3600 + 2 , 1.7);
+  // ($o2->up - $o2->down)/ pow((strtotime("now") - strtotime($o2->post_date))/3600 + 2 , 1.7);
         usort($wp_query->posts, create_function('$o1, $o2', $props[$order_by]));
     }
 

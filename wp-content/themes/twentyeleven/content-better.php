@@ -58,6 +58,10 @@
 			?>
 			<?php if(function_exists('up_down_post_votes')) { up_down_post_votes( get_the_ID() ); } ?> 
 			
+			<?php //export the current score
+			global $post;
+			echo "The current score of this post is " . (int)(10000000*($post->up - $post->down + 1)/ pow((strtotime("now") - strtotime($post->post_date))/3600 + 2 , 1.7)); ?>
+			
 			<?php the_excerpt(); ?>
 								
 			<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'twentyeleven' ) . '</span>', 'after' => '</div>' ) ); ?>
