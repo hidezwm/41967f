@@ -165,7 +165,7 @@ blockquote, q {
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed">
-	<a class="mb" href="<?php echo esc_url( home_url( '/hot' ) ); ?>" rel="home">
+	<a class="mb" href="<?php echo esc_url( home_url( '/hot/' ) ); ?>">
 		<h1 id="site-title"><span><?php bloginfo( 'name' ); ?></span></h1>
 		<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 		Enter >> 

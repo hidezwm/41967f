@@ -16,8 +16,8 @@
 #simplemodal-login-container-osx .close a:hover {color:#000; text-decoration:underline;}
 .simplemodal-login-fields {padding:0 12px 6px;}
 #simplemodal-login-container-osx form .submit {float:right;}
-#simplemodal-login-container-osx form .submit input {background-color:#ddd; border:1px solid #6d6d6d; margin-right:4px; padding:2px 6px; -moz-border-radius:10px; -webkit-border-radius:10px; border-radius:10px;}
-#simplemodal-login-container-osx form .submit input:hover {background-color:#63adf6;}
+#simplemodal-login-container-osx form .submit input {cursor:pointer; background-color:#ddd; border:1px solid #6d6d6d; margin-right:4px; padding:2px 6px; -moz-border-radius:10px; -webkit-border-radius:10px; border-radius:10px;} 
+#simplemodal-login-container-osx form .submit input:hover {background-color:#63adf6;} 
 #simplemodal-login-container-osx form .forgetmenot {color:#666; float:left; font-size:11px; line-height:19px;}
 #simplemodal-login-container-osx .nav {color:#666; clear:both; padding-top:16px; text-align:center;}
 #simplemodal-login-container-osx .nav a {color:#666;}

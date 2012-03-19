@@ -52,6 +52,7 @@ img.updown-button:hover {
 a.simplemodal-login img {
   cursor: pointer;
   opacity: 0.6;
+  background: none;
 }
 a.simplemodal-login img:hover {
   opacity: 1.0;
