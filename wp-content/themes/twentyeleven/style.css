@@ -528,7 +528,7 @@ a:hover {
 #site-description {
 	color: #7a7a7a;
 	font-size: 14px;
-	margin: 0 270px 3.65625em 0;
+	margin: 1em 270px 2.65625em 0;
 }
 #branding img {
 	height: auto;
@@ -571,6 +571,9 @@ a:hover {
 	line-height: 3.333em;
 	padding: 0 1.2125em;
 	text-decoration: none;
+	-webkit-transition: all .4s ease-in-out; /* For chrome & safari */
+    -moz-transition: all .4s ease-in-out; /* For mozilla firefox */
+    -o-transition: all .4s ease-in-out; /* For opera */ 	
 }
 #access ul ul {
 	-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
@@ -603,11 +606,12 @@ a:hover {
 #access li:hover > a,
 #access ul ul :hover > a,
 #access a:focus {
-	color: #0067C8
-}
-#access li:hover > a,
-#access a:focus {
-	color: #ffffff;
+	color: white;
+	text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+	background-color: #1E5FA2;
+	background-image: -moz-linear-gradient(#4794BC,#1E5FA2);
+	background-image: -webkit-linear-gradient(#4794BC,#1E5FA2);
+	border-bottom-color: #438BB1;
 }
 #access ul li:hover > ul {
 	display: block;
@@ -933,9 +937,9 @@ img[class*="wp-image-"],
 #content .gallery .gallery-icon img {/* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
 	background: #666;
 	padding: 4px;
-	-webkit-transition: all 1s linear;
-	transition: all 1s linear;
-	
+	-webkit-transition: all .4s ease-in-out; /* For chrome & safari */
+    -moz-transition: all .4s ease-in-out; /* For mozilla firefox */
+    -o-transition: all .4s ease-in-out; /* For opera */ 	
 }
 .wp-caption img {
 	border-color: #eee;
@@ -2684,11 +2688,11 @@ p.comment-form-comment {
 ----------------------------------------------- */
 @media (max-width: 800px) {
 	body { padding: 0; margin: 0;}
-	#page {border-radius: 4px; margin: 1em .8em 0; }
-	#site-description { margin:0 0 5px 0; background-color: rgba(255, 255, 255, 0.6);}
+	#page {margin: 0; border-radius: 0;}
 }
 @media (max-width: 650px) {
 	#page {margin: 0; border-radius: 0;}
+	#site-description { margin:0 0 5px 0; background-color: rgba(255, 255, 255, 0.6);}
 }
 #branding { border: none; }
 #nav-single { width: 150px; position: relative;}
@@ -2720,6 +2724,14 @@ a:hover,a:focus,a:active {text-decoration: none; color:#4794BC;}
 	background-image: -webkit-linear-gradient(#74B2DB,#1E5FA2);
 	text-decoration: none;
 }
+.menu-item-type-custom {
+padding-right: 3px;
+background: url(images/arrows-dark.png) no-repeat right 14px;
+}
+ul.sub-menu .menu-item-type-custom {
+	padding-right: 0;
+	background: url(images/arrows.png) no-repeat 4px 6px;
+}
 .contread {
 	font-style: italic;
 }
@@ -2748,6 +2760,9 @@ a:hover,a:focus,a:active {text-decoration: none; color:#4794BC;}
 a.simplemodal-register {
 	color: #066DAD !important;
 	font-weight: bold;
+	-webkit-transition: all .4s ease-in-out; /* For chrome & safari */
+    -moz-transition: all .4s ease-in-out; /* For mozilla firefox */
+    -o-transition: all .4s ease-in-out; /* For opera */ 	
 }
 a.simplemodal-register:hover {
 	color: red !important;
