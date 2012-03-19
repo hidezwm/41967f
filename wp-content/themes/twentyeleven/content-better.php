@@ -60,7 +60,7 @@
 			
 			<?php //export the current score
 			global $post;
-			echo "The current score of this post is " . (int)(10000000*($post->up - $post->down + 1)/ pow((strtotime("now") - strtotime($post->post_date))/3600 + 2 , 1.7)); ?>
+			echo "Score: " . (int)(10000000*($post->up - $post->down + 1)/ pow((strtotime("now") - strtotime($post->post_date))/3600 + 2 , 1.7)); ?>
 			
 			<?php the_excerpt(); ?>
 								
